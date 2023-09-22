@@ -107,50 +107,7 @@ class GildedRoseTest {
     app.updateQuality();
     assertEquals(-1, app.items[0].sellIn, "randomAlcool.sellIn < 0 and quality < 0");
     assertEquals(-2, app.items[0].quality, "randomAlcool.sellIn < 0 and quality < 0");
-/*
-    //for randomAlcool.sellIn < 11 et > 6 and quality > 50
-    randomAlcool = new Item("randomAlcool", 8, 80);
-    app.updateQuality();
-    assertEquals(8, randomAlcool.sellIn, "randomAlcool.sellIn < 11 et > 6 and quality > 50");
-    assertEquals(80, randomAlcool.quality, "randomAlcool.sellIn < 11 et > 6 and quality > 50");
 
-    //for randomAlcool.sellIn < 0 and quality > 50
-    randomAlcool = new Item("randomAlcool", -1, 80);
-    app.updateQuality();
-    assertEquals(-1, randomAlcool.sellIn, "randomAlcool.sellIn < 0 and quality > 50");
-    assertEquals(80, randomAlcool.quality, "randomAlcool.sellIn < 0 and quality > 50");
-
-    //for randomAlcool.sellIn < 0 et quality < 50
-    randomAlcool = new Item("randomAlcool", -1, 40);
-    app.updateQuality();
-    assertEquals(-1, randomAlcool.sellIn, "randomAlcool.sellIn < 0 et quality < 50");
-    assertEquals(40, randomAlcool.quality, "randomAlcool.sellIn < 0 et quality < 50");
-
-    //for randomAlcool.sellIn < 6 et quality < 50
-    randomAlcool = new Item("randomAlcool", 4, 40);
-    app.updateQuality();
-    assertEquals(4, randomAlcool.sellIn, "randomAlcool.sellIn < 6 et quality < 50");
-    assertEquals(40, randomAlcool.quality, "randomAlcool.sellIn < 6 et quality < 50");
-
-    //for randomAlcool.sellIn < 11 et quality < 50
-    randomAlcool = new Item("randomAlcool", 9, 40);
-    app.updateQuality();
-    assertEquals(9, randomAlcool.sellIn, "randomAlcool.sellIn < 11 et quality < 50");
-    assertEquals(40, randomAlcool.quality, "randomAlcool.sellIn < 11 et quality < 50");
-
-    //for randomAlcool.sellIn > 11 et quality > 50
-    randomAlcool = new Item("randomAlcool", 19, 80);
-    app.updateQuality();
-    assertEquals(19, randomAlcool.sellIn, "randomAlcool.sellIn > 11 et quality > 50");
-    assertEquals(80, randomAlcool.quality, "randomAlcool.sellIn > 11 et quality > 50");
-
-    //for randomAlcool.sellIn > 11 et quality < 50
-    randomAlcool = new Item("randomAlcool", 19, 40);
-    app.updateQuality();
-    assertEquals(19, randomAlcool.sellIn, "randomAlcool.sellIn > 11 et quality < 50");
-    assertEquals(40, randomAlcool.quality, "randomAlcool.sellIn > 11 et quality < 50");
-
- */
   }
 
 }
