@@ -30,53 +30,9 @@ class GildedRoseTest {
     app.updateQuality();
     assertEquals(-2, app.items[0].sellIn, "agedBrie.sellIn < 0 et quality < 50");
     assertEquals(42, app.items[0].quality, "agedBrie.sellIn < 0 et quality < 50");
-    //CE N EST PAS DU PASSAGE PAR REFERENCE
-/*
-    //for agedBrie.sellIn < 11 et > 6 and quality > 50
-    agedBrie = new Item("Aged Brie", 8, 80);
-    app.updateQuality();
-    assertEquals(8, agedBrie.sellIn, "agedBrie.sellIn < 11 et > 6 and quality > 50");
-    assertEquals(80, agedBrie.quality, "agedBrie.sellIn < 11 et > 6 and quality > 50");
-
-    //for agedBrie.sellIn < 0 and quality > 50
-    agedBrie = new Item("Aged Brie", -1, 80);
-    app.updateQuality();
-    assertEquals(-1, agedBrie.sellIn, "agedBrie.sellIn < 0 and quality > 50");
-    assertEquals(80, agedBrie.quality, "agedBrie.sellIn < 0 and quality > 50");
-
-    //for agedBrie.sellIn < 0 et quality < 50
-    agedBrie = new Item("Aged Brie", -1, 40);
-    app.updateQuality();
-    assertEquals(-1, agedBrie.sellIn, "agedBrie.sellIn < 0 et quality < 50");
-    assertEquals(40, agedBrie.quality, "agedBrie.sellIn < 0 et quality < 50");
-
-    //for agedBrie.sellIn < 6 et quality < 50
-    agedBrie = new Item("Aged Brie", 4, 40);
-    app.updateQuality();
-    assertEquals(4, agedBrie.sellIn, "agedBrie.sellIn < 6 et quality < 50");
-    assertEquals(40, agedBrie.quality, "agedBrie.sellIn < 6 et quality < 50");
-
-    //for agedBrie.sellIn < 11 et quality < 50
-    agedBrie = new Item("Aged Brie", 9, 40);
-    app.updateQuality();
-    assertEquals(9, agedBrie.sellIn, "agedBrie.sellIn < 11 et quality < 50");
-    assertEquals(40, agedBrie.quality, "agedBrie.sellIn < 11 et quality < 50");
-
-    //for agedBrie.sellIn > 11 and quality > 50
-    agedBrie = new Item("Aged Brie", 14, 56);
-    app.updateQuality();
-    assertEquals(14, agedBrie.sellIn, "agedBrie.sellIn > 11 and quality > 50");
-    assertEquals(56, agedBrie.quality, "agedBrie.sellIn > 11 and quality > 50");
-
-    //for agedBrie.sellIn > 11 and quality < 50
-    agedBrie = new Item("Aged Brie", 14, 46);
-    app.updateQuality();
-    assertEquals(14, agedBrie.sellIn, "agedBrie.sellIn > 11 and quality < 50");
-    assertEquals(46, agedBrie.quality, "agedBrie.sellIn > 11 and quality < 50");
- */
   }
 
-  //@Test
+  @Test
   @DisplayName("Test Sulfura, Hand of Ragnaros")
   void testSulfura(){
     Item sulfura = new Item("Sulfuras, Hand of Ragnaros", 0, 80);
@@ -86,119 +42,71 @@ class GildedRoseTest {
     app.updateQuality();
     assertEquals(0, sulfura.sellIn, "Sulfura.sellIn < 6 and quality > 50");
     assertEquals(80, sulfura.quality, "Sulfura.sellIn < 6 and quality > 50");
-    /*
 
-    //for Sulfura.sellIn < 11 et > 6 and quality > 50
-    sulfura = new Item("Sulfuras, Hand of Ragnaros", 8, 80);
+    app.items[0] = new Item("Sulfuras, Hand of Ragnaros", -1, 80);
     app.updateQuality();
-    assertEquals(8, sulfura.sellIn, "Sulfura.sellIn < 11 et > 6 and quality > 50");
-    assertEquals(80, sulfura.quality, "Sulfura.sellIn < 11 et > 6 and quality > 50");
+    assertEquals(-1, app.items[0].sellIn, "Sulfura.sellIn < 0 and quality > 0");
+    assertEquals(80, app.items[0].quality, "Sulfura.sellIn < 0 and quality > 0");
 
-    //for Sulfura.sellIn < 0 and quality > 50
-    sulfura = new Item("Sulfuras, Hand of Ragnaros", -1, 80);
-    app.updateQuality();
-    assertEquals(-1, sulfura.sellIn, "Sulfura.sellIn < 0 and quality > 50");
-    assertEquals(80, sulfura.quality, "Sulfura.sellIn < 0 and quality > 50");
-
-    //for Sulfura.sellIn < 0 et quality < 50
-    sulfura = new Item("Sulfuras, Hand of Ragnaros", -1, 40);
-    app.updateQuality();
-    assertEquals(-1, sulfura.sellIn, "Sulfura.sellIn < 0 et quality < 50");
-    assertEquals(40, sulfura.quality, "Sulfura.sellIn < 0 et quality < 50");
-
-    //for Sulfura.sellIn < 6 et quality < 50
-    sulfura = new Item("Sulfuras, Hand of Ragnaros", 4, 40);
-    app.updateQuality();
-    assertEquals(4, sulfura.sellIn, "Sulfura.sellIn < 6 et quality < 50");
-    assertEquals(40, sulfura.quality, "Sulfura.sellIn < 6 et quality < 50");
-
-    //for Sulfura.sellIn < 11 et quality < 50
-    sulfura = new Item("Sulfuras, Hand of Ragnaros", 9, 40);
-    app.updateQuality();
-    assertEquals(9, sulfura.sellIn, "Sulfura.sellIn < 11 et quality < 50");
-    assertEquals(40, sulfura.quality, "Sulfura.sellIn < 11 et quality < 50");
-
-    //for Sulfura.sellIn > 11 et quality > 50
-    sulfura = new Item("Sulfuras, Hand of Ragnaros", 15, 80);
-    app.updateQuality();
-    assertEquals(15, sulfura.sellIn, "Sulfura.sellIn > 11 et quality > 50");
-    assertEquals(80, sulfura.quality, "Sulfura.sellIn > 11 et quality > 50");
-
-    //for Sulfura.sellIn > 11 et quality < 50
-    sulfura = new Item("Sulfuras, Hand of Ragnaros", 15, 40);
-    app.updateQuality();
-    assertEquals(15, sulfura.sellIn, "Sulfura.sellIn > 11 et quality < 50");
-    assertEquals(40, sulfura.quality, "Sulfura.sellIn > 11 et quality < 50");
-
-     */
   }
 
-  //@Test
+  @Test
   @DisplayName("Test Backstage passes to a TAFKAL80ETC concert")
   void testBackStage(){
     Item backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 80);
     GildedRose app = new GildedRose(new Item[] {backstage});
 
-    //for backstage.sellIn < 6 and quality > 50
-    app.updateQuality();
-    assertEquals(-1, backstage.sellIn, "backstage.sellIn < 6 and quality > 50");
-    assertEquals(0, backstage.quality, "backstage.sellIn < 6 and quality > 50");
-/*
-    //for backstage.sellIn < 11 et > 6 and quality > 50
-    backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 8, 80);
-    app.updateQuality();
-    assertEquals(8, backstage.sellIn, "backstage.sellIn < 11 et > 6 and quality > 50");
-    assertEquals(80, backstage.quality, "backstage.sellIn < 11 et > 6 and quality > 50");
-
     //for backstage.sellIn < 0 and quality > 50
-    backstage = new Item("Backstage passes to a TAFKAL80ETC concert", -1, 80);
     app.updateQuality();
     assertEquals(-1, backstage.sellIn, "backstage.sellIn < 0 and quality > 50");
-    assertEquals(80, backstage.quality, "backstage.sellIn < 0 and quality > 50");
-
-    //for backstage.sellIn < 0 et quality < 50
-    backstage = new Item("Backstage passes to a TAFKAL80ETC concert", -1, 40);
-    app.updateQuality();
-    assertEquals(-1, backstage.sellIn, "backstage.sellIn < 0 et quality < 50");
-    assertEquals(40, backstage.quality, "backstage.sellIn < 0 et quality < 50");
-
-    //for backstage.sellIn < 6 et quality < 50
-    backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 4, 40);
-    app.updateQuality();
-    assertEquals(4, backstage.sellIn, "backstage.sellIn < 6 et quality < 50");
-    assertEquals(40, backstage.quality, "backstage.sellIn < 6 et quality < 50");
+    assertEquals(0, backstage.quality, "backstage.sellIn < 0 and quality > 50");
 
     //for backstage.sellIn < 11 et quality < 50
-    backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 9, 40);
+    app.items[0] = new Item("Backstage passes to a TAFKAL80ETC concert", 9, 40);
     app.updateQuality();
-    assertEquals(9, backstage.sellIn, "backstage.sellIn < 11 et quality < 50");
-    assertEquals(40, backstage.quality, "backstage.sellIn < 11 et quality < 50");
+    assertEquals(8, app.items[0].sellIn, "backstage.sellIn < 11 et quality < 50");
+    assertEquals(42, app.items[0].quality, "backstage.sellIn < 11 et quality < 50");
 
-    //for backstage.sellIn > 11 et quality > 50
-    backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 19, 60);
+    //for backstage.sellIn < 6 et quality < 50
+    app.items[0] = new Item("Backstage passes to a TAFKAL80ETC concert", 4, 40);
     app.updateQuality();
-    assertEquals(19, backstage.sellIn, "backstage.sellIn > 11 et quality > 50");
-    assertEquals(60, backstage.quality, "backstage.sellIn > 11 et quality > 50");
+    assertEquals(3, app.items[0].sellIn, "backstage.sellIn < 6 et quality < 50");
+    assertEquals(43, app.items[0].quality, "backstage.sellIn < 6 et quality < 50");
 
-    //for backstage.sellIn > 11 et quality < 50
-    backstage = new Item("Backstage passes to a TAFKAL80ETC concert", 19, 40);
+    //for backstage.sellIn < 6 et quality = 49
+    app.items[0] = new Item("Backstage passes to a TAFKAL80ETC concert", 4, 49);
     app.updateQuality();
-    assertEquals(19, backstage.sellIn, "backstage.sellIn > 11 et quality < 50");
-    assertEquals(40, backstage.quality, "backstage.sellIn > 11 et quality < 50");
+    assertEquals(3, app.items[0].sellIn, "backstage.sellIn < 6 et quality = 49");
+    assertEquals(50, app.items[0].quality, "backstage.sellIn < 6 et quality = 49");
 
- */
+    //for backstage.sellIn >= 11 et quality < 50
+    app.items[0] = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 40);
+    app.updateQuality();
+    assertEquals(10, app.items[0].sellIn, "for backstage.sellIn >= 11 et quality < 50");
+    assertEquals(41, app.items[0].quality, "for backstage.sellIn >= 11 et quality < 50");
   }
 
-  //@Test
+  @Test
   @DisplayName("Test randomAlcool")
   void testRandomAlcool(){
     Item randomAlcool = new Item("randomAlcool", 0, 80);
     GildedRose app = new GildedRose(new Item[] {randomAlcool});
 
-    //for randomAlcool.sellIn < 6 and quality > 50
+    //for randomAlcool.sellIn < 0 and quality > 50
     app.updateQuality();
     assertEquals(-1, randomAlcool.sellIn, "randomAlcool.sellIn < 6 and quality > 50");
     assertEquals(78, randomAlcool.quality, "randomAlcool.sellIn < 6 and quality > 50");
+
+    //for randomAlcool.sellIn < 6 and quality < 50
+    app.items[0] = new Item("randomAlcool", 2, 0);
+    app.updateQuality();
+    assertEquals(1, app.items[0].sellIn, "randomAlcool.sellIn < 6 and quality < 0");
+    assertEquals(0, app.items[0].quality, "randomAlcool.sellIn < 6 and quality < 0");
+
+    app.items[0] = new Item("randomAlcool", 0, -2);
+    app.updateQuality();
+    assertEquals(-1, app.items[0].sellIn, "randomAlcool.sellIn < 0 and quality < 0");
+    assertEquals(-2, app.items[0].quality, "randomAlcool.sellIn < 0 and quality < 0");
 /*
     //for randomAlcool.sellIn < 11 et > 6 and quality > 50
     randomAlcool = new Item("randomAlcool", 8, 80);
