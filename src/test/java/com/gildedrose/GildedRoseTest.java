@@ -55,10 +55,17 @@ class GildedRoseTest {
     assertEquals(0, sulfura.sellIn, "Sulfura.sellIn < 6 and quality > 50");
     assertEquals(80, sulfura.quality, "Sulfura.sellIn < 6 and quality > 50");
 
+    //for Sulfura.sellIn < 0 and quality > 0
     app.items[0] = new Item("Sulfuras, Hand of Ragnaros", -1, 20);
     app.updateQuality();
     assertEquals(-1, app.items[0].sellIn, "Sulfura.sellIn < 0 and quality > 0");
     assertEquals(20, app.items[0].quality, "Sulfura.sellIn < 0 and quality > 0");
+
+    //for Sulfura.sellIn < 0 and quality < 0
+    app.items[0] = new Item("Sulfuras, Hand of Ragnaros", -1, -12);
+    app.updateQuality();
+    assertEquals(-1, app.items[0].sellIn, "Sulfura.sellIn < 0 and quality < 0");
+    assertEquals(-12, app.items[0].quality, "Sulfura.sellIn < 0 and quality < 0");
 
   }
 
