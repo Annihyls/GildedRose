@@ -20,7 +20,19 @@ class GildedRose {
           }
           break;
         case "Backstage passes to a TAFKAL80ETC concert":
-          //TODO
+          if(items[i].quality < 50) {
+            items[i].quality++;
+          }
+          if(items[i].sellIn < 11 && items[i].quality < 50) {
+            items[i].quality++;
+          }
+          if(items[i].sellIn < 6 && items[i].quality < 50) {
+            items[i].quality++;
+          }
+          items[i].sellIn--;
+          if(items[i].sellIn < 0) {
+            items[i].quality = 0;
+          }
           break;
         case "Sulfuras, Hand of Ragnaros":
           //Nothing to do
@@ -30,7 +42,9 @@ class GildedRose {
           break;
       }
       //first statement just to disable Aged brie from process
-      if(!items[i].name.equals("Aged Brie") && !items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+      if(!items[i].name.equals("Aged Brie")
+              && !items[i].name.equals("Sulfuras, Hand of Ragnaros")
+              && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
         if (!items[i].name.equals("Aged Brie")
                 && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
           if (items[i].quality > 0) {
