@@ -23,14 +23,14 @@ class GildedRose {
           //TODO
           break;
         case "Sulfuras, Hand of Ragnaros":
-          //TODO
+          //Nothing to do
           break;
         default:
           //TODO
           break;
       }
       //first statement just to disable Aged brie from process
-      if(!items[i].name.equals("Aged Brie")) {
+      if(!items[i].name.equals("Aged Brie") && !items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
         if (!items[i].name.equals("Aged Brie")
                 && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
           if (items[i].quality > 0) {
