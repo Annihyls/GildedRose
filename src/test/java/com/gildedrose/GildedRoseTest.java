@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GildedRoseTest {
 
-  //@Test
+  @Test
   @DisplayName("Test that the name is unchanged")
   void testName() {
     Item element = new Item("FIXME", 0, 0);
@@ -55,10 +55,10 @@ class GildedRoseTest {
     assertEquals(0, sulfura.sellIn, "Sulfura.sellIn < 6 and quality > 50");
     assertEquals(80, sulfura.quality, "Sulfura.sellIn < 6 and quality > 50");
 
-    app.items[0] = new Item("Sulfuras, Hand of Ragnaros", -1, 80);
+    app.items[0] = new Item("Sulfuras, Hand of Ragnaros", -1, 20);
     app.updateQuality();
     assertEquals(-1, app.items[0].sellIn, "Sulfura.sellIn < 0 and quality > 0");
-    assertEquals(80, app.items[0].quality, "Sulfura.sellIn < 0 and quality > 0");
+    assertEquals(20, app.items[0].quality, "Sulfura.sellIn < 0 and quality > 0");
 
   }
 
