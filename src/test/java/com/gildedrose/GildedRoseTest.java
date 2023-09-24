@@ -30,6 +30,18 @@ class GildedRoseTest {
     app.updateQuality();
     assertEquals(-2, app.items[0].sellIn, "agedBrie.sellIn < 0 et quality < 50");
     assertEquals(42, app.items[0].quality, "agedBrie.sellIn < 0 et quality < 50");
+
+    //for agedBrie.sellIn > 0 et quality < 50
+    app.items[0] = new Item("Aged Brie", 2, 40);
+    app.updateQuality();
+    assertEquals(1, app.items[0].sellIn, "agedBrie.sellIn > 0 et quality < 50");
+    assertEquals(41, app.items[0].quality, "agedBrie.sellIn > 0 et quality < 50");
+
+    //for agedBrie.sellIn < 0 et quality = 49
+    app.items[0] = new Item("Aged Brie", -1, 49);
+    app.updateQuality();
+    assertEquals(-2, app.items[0].sellIn, "agedBrie.sellIn < 0 et quality = 49");
+    assertEquals(50, app.items[0].quality, "agedBrie.sellIn < 0 et quality = 49");
   }
 
   @Test
