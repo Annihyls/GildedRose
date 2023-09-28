@@ -7,7 +7,7 @@ class GildedRose {
     this.items = items;
   }
 
-  public void updateQualityAllItems() {
+  public void nextDay() {
     for (int i = 0; i < items.length; i++) {
         items[i].updateQuality();
     }
