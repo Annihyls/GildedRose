@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-09-24T13:08:34" hostname="ANNIHYLS" time="0.039">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-09-28T17:36:46" hostname="ANNIHYLS" time="0.039">
   <properties/>
   <testcase name="Test Aged Brie" classname="com.gildedrose.GildedRoseTest" time="0.028"/>
-  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
+  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
   <testcase name="Test randomAlcool" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="Test Backstage passes to a TAFKAL80ETC concert" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="Test Sulfura, Hand of Ragnaros" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
