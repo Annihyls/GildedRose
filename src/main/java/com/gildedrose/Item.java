@@ -20,6 +20,9 @@ public class Item {
     public void updateQuality() {
         switch (this.name) {
             case AGED_BRIE:
+                if(this.quality > 50) {
+                    this.quality = 50;
+                }
                 if (this.quality < 50) {
                     this.quality++;
                 }
@@ -29,6 +32,9 @@ public class Item {
                 }
                 break;
             case BACKSTAGE:
+                if(this.quality > 50) {
+                    this.quality = 50;
+                }
                 if (this.quality < 50) {
                     this.quality++;
                 }
@@ -49,6 +55,9 @@ public class Item {
                 }
                 break;
             default:
+                if(this.quality > 50) {
+                    this.quality = 50;
+                }
                 if (this.quality > 0) {
                     this.quality--;
                 }

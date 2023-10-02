@@ -25,7 +25,7 @@ class GildedRoseTest {
 
     app.nextDay();
     assertEquals(-1, agedBrie.sellIn, "agedBrie.sellIn < 6 and quality > 50");
-    assertEquals(80, agedBrie.quality, "agedBrie.sellIn < 6 and quality > 50");
+    assertEquals(50, agedBrie.quality, "agedBrie.sellIn < 6 and quality > 50");
 
     app.items[0] = new Item(Item.AGED_BRIE, -1, 40);
     app.nextDay();
@@ -104,7 +104,7 @@ class GildedRoseTest {
 
     app.nextDay();
     assertEquals(-1, randomAlcool.sellIn, "randomAlcool.sellIn < 6 and quality > 50");
-    assertEquals(78, randomAlcool.quality, "randomAlcool.sellIn < 6 and quality > 50");
+    assertEquals(48, randomAlcool.quality, "randomAlcool.sellIn < 6 and quality > 50");
 
     app.items[0] = new Item("randomAlcool", 2, 0);
     app.nextDay();
