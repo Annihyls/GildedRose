@@ -2,6 +2,9 @@ package com.gildedrose;
 
 public class Item {
 
+    public static final String AGED_BRIE = "Aged Brie";
+    public static final String BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
+    public static final String SULFURA = "Sulfuras, Hand of Ragnaros";
     public String name;
 
     public int sellIn;
@@ -16,7 +19,7 @@ public class Item {
 
     public void updateQuality() {
         switch (this.name) {
-            case "Aged Brie":
+            case AGED_BRIE:
                 if (this.quality < 50) {
                     this.quality++;
                 }
@@ -25,7 +28,7 @@ public class Item {
                     this.quality++;
                 }
                 break;
-            case "Backstage passes to a TAFKAL80ETC concert":
+            case BACKSTAGE:
                 if (this.quality < 50) {
                     this.quality++;
                 }
@@ -40,7 +43,7 @@ public class Item {
                     this.quality = 0;
                 }
                 break;
-            case "Sulfuras, Hand of Ragnaros":
+            case SULFURA:
                 //Nothing to do
                 break;
             default:
