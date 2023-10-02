@@ -44,7 +44,9 @@ public class Item {
                 }
                 break;
             case SULFURA:
-                //Nothing to do
+                if(this.quality != 80) {
+                    this.quality = 80;
+                }
                 break;
             default:
                 if (this.quality > 0) {

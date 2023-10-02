@@ -1,6 +1,9 @@
 package com.gildedrose;
 
 import org.junit.jupiter.api.*;
+
+import java.util.concurrent.Callable;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class GildedRoseTest {
@@ -53,12 +56,12 @@ class GildedRoseTest {
     app.items[0] = new Item(Item.SULFURA, -1, 20);
     app.nextDay();
     assertEquals(-1, app.items[0].sellIn, "Sulfura.sellIn < 0 and quality > 0");
-    assertEquals(20, app.items[0].quality, "Sulfura.sellIn < 0 and quality > 0");
+    assertEquals(80, app.items[0].quality, "Sulfura.sellIn < 0 and quality > 0");
 
     app.items[0] = new Item(Item.SULFURA, -1, -12);
     app.nextDay();
     assertEquals(-1, app.items[0].sellIn, "Sulfura.sellIn < 0 and quality < 0");
-    assertEquals(-12, app.items[0].quality, "Sulfura.sellIn < 0 and quality < 0");
+    assertEquals(80, app.items[0].quality, "Sulfura.sellIn < 0 and quality < 0");
 
   }
 
