@@ -114,7 +114,7 @@ class GildedRoseTest {
     app.items[0] = new Item("randomAlcool", 0, -2);
     app.nextDay();
     assertEquals(-1, app.items[0].sellIn, "randomAlcool.sellIn < 0 and quality < 0");
-    assertEquals(-2, app.items[0].quality, "randomAlcool.sellIn < 0 and quality < 0");
+    assertEquals(0, app.items[0].quality, "randomAlcool.sellIn < 0 and quality < 0");
 
   }
 
