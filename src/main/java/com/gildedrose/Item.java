@@ -21,12 +21,7 @@ public class Item {
     public void updateQuality() {
         switch (this.name) {
             case AGED_BRIE:
-                if(this.quality > 50) {
-                    this.quality = 50;
-                }
-                if(this.quality < 0) {
-                    this.quality = 0;
-                }
+               checkIfQualityOutOfLimits();
                 if (this.quality < 50) {
                     this.quality++;
                 }
@@ -36,12 +31,7 @@ public class Item {
                 }
                 break;
             case BACKSTAGE:
-                if(this.quality > 50) {
-                    this.quality = 50;
-                }
-                if(this.quality < 0) {
-                    this.quality = 0;
-                }
+               checkIfQualityOutOfLimits();
                 if (this.quality < 50) {
                     this.quality++;
                 }
@@ -62,27 +52,17 @@ public class Item {
                 }
                 break;
             case CONJURED:
-                if(this.quality > 50) {
-                    this.quality = 50;
-                }
-                if(this.quality < 0) {
-                    this.quality = 0;
-                }
+               checkIfQualityOutOfLimits();
                 if (this.quality > 0) {
                     this.quality = this.quality - 2;
                 }
                 this.sellIn--;
                 if (this.sellIn < 0 && this.quality > 0) {
-                    this.quality = this.quality - 2;
+                    this.quality = this.quality -2;
                 }
                 break;
             default:
-                if(this.quality > 50) {
-                    this.quality = 50;
-                }
-                if(this.quality < 0) {
-                    this.quality = 0;
-                }
+               checkIfQualityOutOfLimits();
                 if (this.quality > 0) {
                     this.quality--;
                 }
@@ -91,6 +71,15 @@ public class Item {
                     this.quality--;
                 }
                 break;
+        }
+    }
+
+    void checkIfQualityOutOfLimits() {
+        if(this.quality > 50) {
+            this.quality = 50;
+        }
+        if(this.quality < 0) {
+            this.quality = 0;
         }
     }
 

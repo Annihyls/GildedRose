@@ -21,82 +21,71 @@ public class Item {
     public void updateQuality() {
 <span class="fc bfc" id="L22" title="All 5 branches covered.">        switch (this.name) {</span>
             case AGED_BRIE:
-<span class="fc bfc" id="L24" title="All 2 branches covered.">                if(this.quality &gt; 50) {</span>
-<span class="fc" id="L25">                    this.quality = 50;</span>
+<span class="fc" id="L24">               checkIfQualityOutOfLimits();</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">                if (this.quality &lt; 50) {</span>
+<span class="fc" id="L26">                    this.quality++;</span>
                 }
-<span class="fc bfc" id="L27" title="All 2 branches covered.">                if(this.quality &lt; 0) {</span>
-<span class="fc" id="L28">                    this.quality = 0;</span>
-                }
-<span class="fc bfc" id="L30" title="All 2 branches covered.">                if (this.quality &lt; 50) {</span>
-<span class="fc" id="L31">                    this.quality++;</span>
-                }
-<span class="fc" id="L33">                this.sellIn--;</span>
-<span class="fc bfc" id="L34" title="All 4 branches covered.">                if (this.sellIn &lt; 0 &amp;&amp; this.quality &lt; 50) {</span>
-<span class="fc" id="L35">                    this.quality++;</span>
+<span class="fc" id="L28">                this.sellIn--;</span>
+<span class="fc bfc" id="L29" title="All 4 branches covered.">                if (this.sellIn &lt; 0 &amp;&amp; this.quality &lt; 50) {</span>
+<span class="fc" id="L30">                    this.quality++;</span>
                 }
                 break;
             case BACKSTAGE:
-<span class="fc bfc" id="L39" title="All 2 branches covered.">                if(this.quality &gt; 50) {</span>
-<span class="fc" id="L40">                    this.quality = 50;</span>
+<span class="fc" id="L34">               checkIfQualityOutOfLimits();</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">                if (this.quality &lt; 50) {</span>
+<span class="fc" id="L36">                    this.quality++;</span>
                 }
-<span class="fc bfc" id="L42" title="All 2 branches covered.">                if(this.quality &lt; 0) {</span>
-<span class="fc" id="L43">                    this.quality = 0;</span>
+<span class="fc bfc" id="L38" title="All 4 branches covered.">                if (this.sellIn &lt; 11 &amp;&amp; this.quality &lt; 50) {</span>
+<span class="fc" id="L39">                    this.quality++;</span>
                 }
-<span class="fc bfc" id="L45" title="All 2 branches covered.">                if (this.quality &lt; 50) {</span>
-<span class="fc" id="L46">                    this.quality++;</span>
+<span class="fc bfc" id="L41" title="All 4 branches covered.">                if (this.sellIn &lt; 6 &amp;&amp; this.quality &lt; 50) {</span>
+<span class="fc" id="L42">                    this.quality++;</span>
                 }
-<span class="fc bfc" id="L48" title="All 4 branches covered.">                if (this.sellIn &lt; 11 &amp;&amp; this.quality &lt; 50) {</span>
-<span class="fc" id="L49">                    this.quality++;</span>
-                }
-<span class="fc bfc" id="L51" title="All 4 branches covered.">                if (this.sellIn &lt; 6 &amp;&amp; this.quality &lt; 50) {</span>
-<span class="fc" id="L52">                    this.quality++;</span>
-                }
-<span class="fc" id="L54">                this.sellIn--;</span>
-<span class="fc bfc" id="L55" title="All 2 branches covered.">                if (this.sellIn &lt; 0) {</span>
-<span class="fc" id="L56">                    this.quality = 0;</span>
+<span class="fc" id="L44">                this.sellIn--;</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">                if (this.sellIn &lt; 0) {</span>
+<span class="fc" id="L46">                    this.quality = 0;</span>
                 }
                 break;
             case SULFURA:
-<span class="fc bfc" id="L60" title="All 2 branches covered.">                if(this.quality != 80) {</span>
-<span class="fc" id="L61">                    this.quality = 80;</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">                if(this.quality != 80) {</span>
+<span class="fc" id="L51">                    this.quality = 80;</span>
                 }
                 break;
             case CONJURED:
-<span class="fc bfc" id="L65" title="All 2 branches covered.">                if(this.quality &gt; 50) {</span>
-<span class="fc" id="L66">                    this.quality = 50;</span>
+<span class="fc" id="L55">               checkIfQualityOutOfLimits();</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">                if (this.quality &gt; 0) {</span>
+<span class="fc" id="L57">                    this.quality = this.quality - 2;</span>
                 }
-<span class="fc bfc" id="L68" title="All 2 branches covered.">                if(this.quality &lt; 0) {</span>
-<span class="fc" id="L69">                    this.quality = 0;</span>
-                }
-<span class="fc bfc" id="L71" title="All 2 branches covered.">                if (this.quality &gt; 0) {</span>
-<span class="fc" id="L72">                    this.quality = this.quality - 2;</span>
-                }
-<span class="fc" id="L74">                this.sellIn--;</span>
-<span class="fc bfc" id="L75" title="All 4 branches covered.">                if (this.sellIn &lt; 0 &amp;&amp; this.quality &gt; 0) {</span>
-<span class="fc" id="L76">                    this.quality = this.quality - 2;</span>
+<span class="fc" id="L59">                this.sellIn--;</span>
+<span class="fc bfc" id="L60" title="All 4 branches covered.">                if (this.sellIn &lt; 0 &amp;&amp; this.quality &gt; 0) {</span>
+<span class="fc" id="L61">                    this.quality = this.quality -2;</span>
                 }
                 break;
             default:
-<span class="fc bfc" id="L80" title="All 2 branches covered.">                if(this.quality &gt; 50) {</span>
-<span class="fc" id="L81">                    this.quality = 50;</span>
+<span class="fc" id="L65">               checkIfQualityOutOfLimits();</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">                if (this.quality &gt; 0) {</span>
+<span class="fc" id="L67">                    this.quality--;</span>
                 }
-<span class="fc bfc" id="L83" title="All 2 branches covered.">                if(this.quality &lt; 0) {</span>
-<span class="fc" id="L84">                    this.quality = 0;</span>
-                }
-<span class="fc bfc" id="L86" title="All 2 branches covered.">                if (this.quality &gt; 0) {</span>
-<span class="fc" id="L87">                    this.quality--;</span>
-                }
-<span class="fc" id="L89">                this.sellIn--;</span>
-<span class="fc bfc" id="L90" title="All 4 branches covered.">                if (this.sellIn &lt; 0 &amp;&amp; this.quality &gt; 0) {</span>
-<span class="fc" id="L91">                    this.quality--;</span>
+<span class="fc" id="L69">                this.sellIn--;</span>
+<span class="fc bfc" id="L70" title="All 4 branches covered.">                if (this.sellIn &lt; 0 &amp;&amp; this.quality &gt; 0) {</span>
+<span class="fc" id="L71">                    this.quality--;</span>
                 }
                 break;
         }
-<span class="fc" id="L95">    }</span>
+<span class="fc" id="L75">    }</span>
+
+    void checkIfQualityOutOfLimits() {
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        if(this.quality &gt; 50) {</span>
+<span class="fc" id="L79">            this.quality = 50;</span>
+        }
+<span class="fc bfc" id="L81" title="All 2 branches covered.">        if(this.quality &lt; 0) {</span>
+<span class="fc" id="L82">            this.quality = 0;</span>
+        }
+<span class="fc" id="L84">    }</span>
 
    @Override
    public String toString() {
-<span class="nc" id="L99">        return this.name + &quot;, &quot; + this.sellIn + &quot;, &quot; + this.quality;</span>
+<span class="nc" id="L88">        return this.name + &quot;, &quot; + this.sellIn + &quot;, &quot; + this.quality;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

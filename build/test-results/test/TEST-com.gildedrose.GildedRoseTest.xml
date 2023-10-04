@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-10-04T06:37:41" hostname="ANNIHYLS" time="0.094">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-10-04T06:42:10" hostname="ANNIHYLS" time="0.081">
   <properties/>
-  <testcase name="Test Aged Brie" classname="com.gildedrose.GildedRoseTest" time="0.056"/>
-  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.013"/>
+  <testcase name="Test Aged Brie" classname="com.gildedrose.GildedRoseTest" time="0.05"/>
+  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.006"/>
   <testcase name="Test randomAlcool" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
   <testcase name="Conjured" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
-  <testcase name="Test Backstage passes to a TAFKAL80ETC concert" classname="com.gildedrose.GildedRoseTest" time="0.004"/>
-  <testcase name="Test Sulfura, Hand of Ragnaros" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="Test Backstage passes to a TAFKAL80ETC concert" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="Test Sulfura, Hand of Ragnaros" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
