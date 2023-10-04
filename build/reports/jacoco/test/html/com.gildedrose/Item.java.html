@@ -55,33 +55,35 @@ public class Item {
 <span class="fc" id="L55">               checkIfQualityOutOfLimits();</span>
 <span class="fc bfc" id="L56" title="All 2 branches covered.">               if (this.quality &gt; 0) {</span>
 <span class="fc" id="L57">                   this.quality--;</span>
-<span class="fc bfc" id="L58" title="All 2 branches covered.">                   if(this.name.startsWith(CONJURED)) {</span>
-<span class="fc" id="L59">                       this.quality--;</span>
-                   }
+<span class="fc" id="L58">                   checkIfConjured();</span>
                }
-<span class="fc" id="L62">               this.sellIn--;</span>
-<span class="fc bfc" id="L63" title="All 4 branches covered.">               if (this.sellIn &lt; 0 &amp;&amp; this.quality &gt; 0) {</span>
-<span class="fc" id="L64">                   this.quality--;</span>
-<span class="fc bfc" id="L65" title="All 2 branches covered.">                   if(this.name.startsWith(CONJURED)) {</span>
-<span class="fc" id="L66">                       this.quality--;</span>
-                   }
+<span class="fc" id="L60">               this.sellIn--;</span>
+<span class="fc bfc" id="L61" title="All 4 branches covered.">               if (this.sellIn &lt; 0 &amp;&amp; this.quality &gt; 0) {</span>
+<span class="fc" id="L62">                   this.quality--;</span>
+<span class="fc" id="L63">                   checkIfConjured();</span>
                }
                break;
         }
-<span class="fc" id="L71">    }</span>
+<span class="fc" id="L67">    }</span>
 
     void checkIfQualityOutOfLimits() {
-<span class="fc bfc" id="L74" title="All 2 branches covered.">        if(this.quality &gt; 50) {</span>
-<span class="fc" id="L75">            this.quality = 50;</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        if(this.quality &gt; 50) {</span>
+<span class="fc" id="L71">            this.quality = 50;</span>
         }
-<span class="fc bfc" id="L77" title="All 2 branches covered.">        if(this.quality &lt; 0) {</span>
-<span class="fc" id="L78">            this.quality = 0;</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        if(this.quality &lt; 0) {</span>
+<span class="fc" id="L74">            this.quality = 0;</span>
         }
-<span class="fc" id="L80">    }</span>
+<span class="fc" id="L76">    }</span>
+
+    void checkIfConjured() {
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        if(this.name.startsWith(CONJURED)) {</span>
+<span class="fc" id="L80">            this.quality--;</span>
+        }
+<span class="fc" id="L82">    }</span>
 
    @Override
    public String toString() {
-<span class="nc" id="L84">        return this.name + &quot;, &quot; + this.sellIn + &quot;, &quot; + this.quality;</span>
+<span class="nc" id="L86">        return this.name + &quot;, &quot; + this.sellIn + &quot;, &quot; + this.quality;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

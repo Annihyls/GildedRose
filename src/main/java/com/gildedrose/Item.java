@@ -55,16 +55,12 @@ public class Item {
                checkIfQualityOutOfLimits();
                if (this.quality > 0) {
                    this.quality--;
-                   if(this.name.startsWith(CONJURED)) {
-                       this.quality--;
-                   }
+                   checkIfConjured();
                }
                this.sellIn--;
                if (this.sellIn < 0 && this.quality > 0) {
                    this.quality--;
-                   if(this.name.startsWith(CONJURED)) {
-                       this.quality--;
-                   }
+                   checkIfConjured();
                }
                break;
         }
@@ -76,6 +72,12 @@ public class Item {
         }
         if(this.quality < 0) {
             this.quality = 0;
+        }
+    }
+
+    void checkIfConjured() {
+        if(this.name.startsWith(CONJURED)) {
+            this.quality--;
         }
     }
 
