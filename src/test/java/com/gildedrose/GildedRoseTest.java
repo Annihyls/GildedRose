@@ -123,19 +123,19 @@ class GildedRoseTest {
   @Test
   @DisplayName("Conjured")
   void testConjured(){
-    Item conjured = new Item("Conjured", 0, 80);
+    Item conjured = new Item(Item.CONJURED + Item.SULFURA, 0, 80);
     GildedRose app = new GildedRose(new Item[] {conjured});
 
     app.nextDay();
     assertEquals(-1, conjured.sellIn, "conjured.sellIn < 6 and quality > 50");
     assertEquals(46, conjured.quality, "conjured.sellIn < 6 and quality > 50");
 
-    app.items[0] = new Item("Conjured", 2, 0);
+    app.items[0] = new Item(Item.CONJURED + "Mana Cake", 2, 0);
     app.nextDay();
     assertEquals(1, app.items[0].sellIn, "conjured.sellIn < 6 and quality = 0");
     assertEquals(0, app.items[0].quality, "conjured.sellIn < 6 and quality = 0");
 
-    app.items[0] = new Item("Conjured", 0, -2);
+    app.items[0] = new Item(Item.CONJURED, 0, -2);
     app.nextDay();
     assertEquals(-1, app.items[0].sellIn, "conjured.sellIn < 0 and quality < 0");
     assertEquals(0, app.items[0].quality, "conjured.sellIn < 0 and quality < 0");

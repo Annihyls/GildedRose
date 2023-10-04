@@ -5,7 +5,7 @@ public class Item {
     public static final String AGED_BRIE = "Aged Brie";
     public static final String BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
     public static final String SULFURA = "Sulfuras, Hand of Ragnaros";
-    public static final String CONJURED = "Conjured";
+    public static final String CONJURED = "Conjured ";
     public String name;
 
     public int sellIn;
