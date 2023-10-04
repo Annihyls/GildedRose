@@ -5,6 +5,7 @@ public class Item {
     public static final String AGED_BRIE = "Aged Brie";
     public static final String BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert";
     public static final String SULFURA = "Sulfuras, Hand of Ragnaros";
+    public static final String CONJURED = "Conjured";
     public String name;
 
     public int sellIn;
@@ -58,6 +59,21 @@ public class Item {
             case SULFURA:
                 if(this.quality != 80) {
                     this.quality = 80;
+                }
+                break;
+            case CONJURED:
+                if(this.quality > 50) {
+                    this.quality = 50;
+                }
+                if(this.quality < 0) {
+                    this.quality = 0;
+                }
+                if (this.quality > 0) {
+                    this.quality = this.quality - 2;
+                }
+                this.sellIn--;
+                if (this.sellIn < 0 && this.quality > 0) {
+                    this.quality = this.quality - 2;
                 }
                 break;
             default:

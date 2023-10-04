@@ -2,8 +2,6 @@ package com.gildedrose;
 
 import org.junit.jupiter.api.*;
 
-import java.util.concurrent.Callable;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class GildedRoseTest {
@@ -41,6 +39,11 @@ class GildedRoseTest {
     app.nextDay();
     assertEquals(-2, app.items[0].sellIn, "agedBrie.sellIn < 0 et quality = 49");
     assertEquals(50, app.items[0].quality, "agedBrie.sellIn < 0 et quality = 49");
+
+    app.items[0] = new Item(Item.AGED_BRIE, -1, -9);
+    app.nextDay();
+    assertEquals(-2, app.items[0].sellIn, "agedBrie.sellIn < 0 et quality <  0");
+    assertEquals(2, app.items[0].quality, "agedBrie.sellIn < 0 et quality < 0");
   }
 
   @Test
@@ -90,10 +93,9 @@ class GildedRoseTest {
     assertEquals(3, app.items[0].sellIn, "backstage.sellIn < 6 et quality = 49");
     assertEquals(50, app.items[0].quality, "backstage.sellIn < 6 et quality = 49");
 
-    app.items[0] = new Item(Item.BACKSTAGE, 11, 40);
+    app.items[0] = new Item(Item.BACKSTAGE, 11, -10);
     app.nextDay();
-    assertEquals(10, app.items[0].sellIn, "for backstage.sellIn >= 11 et quality < 50");
-    assertEquals(41, app.items[0].quality, "for backstage.sellIn >= 11 et quality < 50");
+    assertEquals(1, app.items[0].quality, "backstage.sellIn >= 11 et quality < 0");
   }
 
   @Test
@@ -108,8 +110,8 @@ class GildedRoseTest {
 
     app.items[0] = new Item("randomAlcool", 2, 0);
     app.nextDay();
-    assertEquals(1, app.items[0].sellIn, "randomAlcool.sellIn < 6 and quality < 0");
-    assertEquals(0, app.items[0].quality, "randomAlcool.sellIn < 6 and quality < 0");
+    assertEquals(1, app.items[0].sellIn, "randomAlcool.sellIn < 6 and quality = 0");
+    assertEquals(0, app.items[0].quality, "randomAlcool.sellIn < 6 and quality = 0");
 
     app.items[0] = new Item("randomAlcool", 0, -2);
     app.nextDay();
@@ -118,4 +120,25 @@ class GildedRoseTest {
 
   }
 
+  @Test
+  @DisplayName("Conjured")
+  void testConjured(){
+    Item conjured = new Item("Conjured", 0, 80);
+    GildedRose app = new GildedRose(new Item[] {conjured});
+
+    app.nextDay();
+    assertEquals(-1, conjured.sellIn, "conjured.sellIn < 6 and quality > 50");
+    assertEquals(46, conjured.quality, "conjured.sellIn < 6 and quality > 50");
+
+    app.items[0] = new Item("Conjured", 2, 0);
+    app.nextDay();
+    assertEquals(1, app.items[0].sellIn, "conjured.sellIn < 6 and quality = 0");
+    assertEquals(0, app.items[0].quality, "conjured.sellIn < 6 and quality = 0");
+
+    app.items[0] = new Item("Conjured", 0, -2);
+    app.nextDay();
+    assertEquals(-1, app.items[0].sellIn, "conjured.sellIn < 0 and quality < 0");
+    assertEquals(0, app.items[0].quality, "conjured.sellIn < 0 and quality < 0");
+
+  }
 }
