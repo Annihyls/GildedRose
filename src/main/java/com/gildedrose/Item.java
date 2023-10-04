@@ -51,26 +51,22 @@ public class Item {
                     this.quality = 80;
                 }
                 break;
-            case CONJURED:
-               checkIfQualityOutOfLimits();
-                if (this.quality > 0) {
-                    this.quality = this.quality - 2;
-                }
-                this.sellIn--;
-                if (this.sellIn < 0 && this.quality > 0) {
-                    this.quality = this.quality -2;
-                }
-                break;
             default:
                checkIfQualityOutOfLimits();
-                if (this.quality > 0) {
-                    this.quality--;
-                }
-                this.sellIn--;
-                if (this.sellIn < 0 && this.quality > 0) {
-                    this.quality--;
-                }
-                break;
+               if (this.quality > 0) {
+                   this.quality--;
+                   if(this.name.startsWith(CONJURED)) {
+                       this.quality--;
+                   }
+               }
+               this.sellIn--;
+               if (this.sellIn < 0 && this.quality > 0) {
+                   this.quality--;
+                   if(this.name.startsWith(CONJURED)) {
+                       this.quality--;
+                   }
+               }
+               break;
         }
     }
 

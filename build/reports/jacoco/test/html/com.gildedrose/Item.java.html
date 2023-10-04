@@ -19,7 +19,7 @@ public class Item {
 <span class="fc" id="L19">    }</span>
 
     public void updateQuality() {
-<span class="fc bfc" id="L22" title="All 5 branches covered.">        switch (this.name) {</span>
+<span class="fc bfc" id="L22" title="All 4 branches covered.">        switch (this.name) {</span>
             case AGED_BRIE:
 <span class="fc" id="L24">               checkIfQualityOutOfLimits();</span>
 <span class="fc bfc" id="L25" title="All 2 branches covered.">                if (this.quality &lt; 50) {</span>
@@ -51,41 +51,37 @@ public class Item {
 <span class="fc" id="L51">                    this.quality = 80;</span>
                 }
                 break;
-            case CONJURED:
-<span class="fc" id="L55">               checkIfQualityOutOfLimits();</span>
-<span class="fc bfc" id="L56" title="All 2 branches covered.">                if (this.quality &gt; 0) {</span>
-<span class="fc" id="L57">                    this.quality = this.quality - 2;</span>
-                }
-<span class="fc" id="L59">                this.sellIn--;</span>
-<span class="fc bfc" id="L60" title="All 4 branches covered.">                if (this.sellIn &lt; 0 &amp;&amp; this.quality &gt; 0) {</span>
-<span class="fc" id="L61">                    this.quality = this.quality -2;</span>
-                }
-                break;
             default:
-<span class="fc" id="L65">               checkIfQualityOutOfLimits();</span>
-<span class="fc bfc" id="L66" title="All 2 branches covered.">                if (this.quality &gt; 0) {</span>
-<span class="fc" id="L67">                    this.quality--;</span>
-                }
-<span class="fc" id="L69">                this.sellIn--;</span>
-<span class="fc bfc" id="L70" title="All 4 branches covered.">                if (this.sellIn &lt; 0 &amp;&amp; this.quality &gt; 0) {</span>
-<span class="fc" id="L71">                    this.quality--;</span>
-                }
-                break;
+<span class="fc" id="L55">               checkIfQualityOutOfLimits();</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">               if (this.quality &gt; 0) {</span>
+<span class="fc" id="L57">                   this.quality--;</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">                   if(this.name.startsWith(CONJURED)) {</span>
+<span class="fc" id="L59">                       this.quality--;</span>
+                   }
+               }
+<span class="fc" id="L62">               this.sellIn--;</span>
+<span class="fc bfc" id="L63" title="All 4 branches covered.">               if (this.sellIn &lt; 0 &amp;&amp; this.quality &gt; 0) {</span>
+<span class="fc" id="L64">                   this.quality--;</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">                   if(this.name.startsWith(CONJURED)) {</span>
+<span class="fc" id="L66">                       this.quality--;</span>
+                   }
+               }
+               break;
         }
-<span class="fc" id="L75">    }</span>
+<span class="fc" id="L71">    }</span>
 
     void checkIfQualityOutOfLimits() {
-<span class="fc bfc" id="L78" title="All 2 branches covered.">        if(this.quality &gt; 50) {</span>
-<span class="fc" id="L79">            this.quality = 50;</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        if(this.quality &gt; 50) {</span>
+<span class="fc" id="L75">            this.quality = 50;</span>
         }
-<span class="fc bfc" id="L81" title="All 2 branches covered.">        if(this.quality &lt; 0) {</span>
-<span class="fc" id="L82">            this.quality = 0;</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        if(this.quality &lt; 0) {</span>
+<span class="fc" id="L78">            this.quality = 0;</span>
         }
-<span class="fc" id="L84">    }</span>
+<span class="fc" id="L80">    }</span>
 
    @Override
    public String toString() {
-<span class="nc" id="L88">        return this.name + &quot;, &quot; + this.sellIn + &quot;, &quot; + this.quality;</span>
+<span class="nc" id="L84">        return this.name + &quot;, &quot; + this.sellIn + &quot;, &quot; + this.quality;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
